@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ejemploJava;
 
 /**
@@ -15,7 +11,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Entrenando POO");
+        Coche miCoche;
+        
+        miCoche = new Coche("Toyowa"); // Las instancias se hacen con New
+        miCoche.setCapacidadDeposito(15);
+        miCoche.setEsGasolina(true);
+        miCoche.setArrancado(true);
+        miCoche.echarCarburante(5);
+        
+     
+        System.out.println("Coche creado:capacidad " + miCoche.getCapacidadDeposito()
+                                + " marca " +miCoche.getMarca());
+        
+        System.out.println("Nivel deposito: " + miCoche.getNivelDeposito());
+        miCoche.vaciaDeposito();
+        miCoche.acelerar();
+        miCoche.mostrar();
     }
-    
 }
