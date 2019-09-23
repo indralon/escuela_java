@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejemplos Obj</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Ejemplos Obj</div>
+        <script>
+            var valor1 = new Object();
+            var valor2 = {
+                "dni": "9848774J",
+                "nombre": "Jacintito",
+                nacimiento: new Date()
+
+            }; // A lo JSON
+
+            var persona = new Object();
+            persona.dni = "01234567K";
+            persona.nombre = "Fulanito";
+            persona.edad = 43;
+            persona.nacimiento = new Date();
+//            alert("Info persona: " + persona.nombre
+//                    + "\n Edad: " + persona.edad
+//                    + "\n DNI: " + persona.dni
+//                    + "\n Nacimiento " + persona.nacimiento);
+            persona["apellidos"] = "De tal y cual";
+
+//            alert("Info persona: " + valor2.nombre
+//                    + "\n Edad: " + valor2.edad
+//                    + "\n DNI: " + valor2.dni
+//                    + "\n Nacimiento " + valor2.nacimiento
+//                    + " \n Apellidos: " + persona.apellidos);
+
+            var coche = new Object();
+            coche.marca = "Fordo"
+            coche.numRuedas = 4;
+            coche.tipoCarburante = "Diesel";
+            coche.matricula = "5556-AK";
+            coche.nivDeposito = 33.5;
+            coche.capacidadDeposito = 40.0;
+            coche.arrancado = true;
+            
+            alert("Info coche:" + coche.marca
+                    + "\n Matricula: " + coche.matricula
+                    + "\n Tipo carburante: " + coche.tipoCarburante
+                    + "\n Capacidad deposito: " + coche.capacidadDeposito
+                    + " \n ¿Esta arrancao? " + coche.arrancado);
+
+        </script>
+    </body>
+</html>

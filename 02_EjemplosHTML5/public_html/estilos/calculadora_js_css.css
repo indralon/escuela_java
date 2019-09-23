@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-sep-2019, 17:14:08
+    Author     : alumno
+*/
+
+
+#cabeceraCalculadora {
+    font-size: 40px;
+    font-family: monospace;
+    margin-left: 1.5em;
+    font-size: 70px;
+    color: gold;
+
+}
+
+#calculadora {
+    font-size: 40px;
+    margin-left: 18em;
+    margin-top: 2em;
+    transform: scale(2.0);
+}

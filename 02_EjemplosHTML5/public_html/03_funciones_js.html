@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Funciones JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Funciones JS</div>
+        <script>
+            function miFuncion(args1, args2) {
+                document.write("<p>Arg1: " + args1 + " </p>");
+                document.write("<p>Arg2: " + args2 + "</p>");
+                if (arguments.length > 2) {
+                    document.write("<h2>Tercer arg " + arguments[2] + "</h2>")
+                    if (arguments.length > 3) {
+                        for(arg in arguments) {
+                            document.write("<h3>Otro arg: " + arguments[arg] + "</h3>");
+                        }
+                    }
+                }
+            }
+            /*
+            miFuncion("argumento texto", 2000);
+            miFuncion(new Object(), false);
+            miFuncion(null, "Muchas", 24, true);
+            */
+            var otraFuncion = function(veces) {
+                for(var i = 0; i < veces; i++) {
+                    document.write("<p>Vez: " + i + "</p>");
+                }
+                
+            };
+            otraFuncion(3); 
+            otraFuncion.puesSi = "Es un objeto";
+            
+            var noTipica = new Function("x","y","var r=x+y; return r");
+            document.write("<p>2 + 2 =  " +noTipica(2, 2) + "</p>");
+            document.write(miFuncion.toString());
+        </script>
+    </body>
+</html>

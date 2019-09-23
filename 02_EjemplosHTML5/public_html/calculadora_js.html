@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calculadora JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos/calculadora_js_css.css" />
+
+    </head>
+    <body>
+        <div id="cabeceraCalculadora">CALCULADORA GUAPA</div>
+        <div id="calculadora">
+            <input type="number" id="numbersBox" />
+            <br>
+            <input type="Button" id="button1" value="1" />
+            <input type="Button" id="button2" value="2" />
+            <input type="Button" id="button3" value="3" />
+            <input type="Button" id="buttonAdd" value="+" />
+
+            <br>
+            <input type="Button" id="button4" value="4" />
+            <input type="Button" id="button5" value="5" />
+            <input type="Button" id="button6" value="6" />
+            <input type="Button" id="buttonSubs"  value="-" />
+            <br>
+            <input type="Button" id="button7" value="7" />
+            <input type="Button" id="button8" value="8" />
+            <input type="Button" id="button9" value="9" />
+            <input type="Button" id="buttonEquals" value="=" />
+            <br>
+            <input type="Button" id="button0" value="0" />
+            <input type="Button" id="buttonMult" value="X" />
+            <input type="Button" id="buttonDiv" value="/" />
+
+            <input type="Button" id="buttonC" value="C" />
+
+        </div>
+        <script>
+            let numberBox = document.getElementById("numbersBox");
+            let button1 = document.getElementById("button1");
+            let button2 = document.getElementById("button2");
+            let button3 = document.getElementById("button3");
+            let button4 = document.getElementById("button4");
+            let button5 = document.getElementById("button5");
+            let button6 = document.getElementById("button6");
+            let button7 = document.getElementById("button7");
+            let button8 = document.getElementById("button8");
+            let button9 = document.getElementById("button9");
+            let button0 = document.getElementById("button0");
+            let buttonAdd = document.getElementById("buttonAdd");
+            let buttonSubs = document.getElementById("buttonSubs");
+            let buttonMult = document.getElementById("buttonMult");
+            let buttonDiv = document.getElementById("buttonDiv");
+            let buttonMod = document.getElementById("buttonMod");
+            let buttonC = document.getElementById("buttonC");
+            let buttonEquals = document.getElementById("buttonEquals");
+
+            numbersBox.value = 0;
+            let currentValue = 0;
+            let lastOperator = "none";
+
+            // operar segun el boton. Hecho muy guarro
+            function operate(operation) {
+                switch (operation) {
+                    case "+":
+                        currentValue += parseFloat(numbersBox.value);
+                        numbersBox.value = 0;
+                        lastOperator = "+";
+                        break;
+                    case "-":
+                        if (currentValue === 0) {
+                            currentValue = parseFloat(numbersBox.value);
+                        } else {
+                            currentValue -= parseFloat(numbersBox.value);
+                        }
+                        numbersBox.value = 0;
+                        lastOperator = "-";
+                        break;
+                    case "*":
+                        if (currentValue === 0) {
+                            currentValue = parseFloat(numbersBox.value);
+                        } else {
+                            currentValue *= parseFloat(numbersBox.value);
+                        }
+                        numbersBox.value = 0;
+                        lastOperator = "*";
+                        break;
+                    case "/":
+                        if (currentValue === 0) {
+                            currentValue = parseFloat(numbersBox.value);
+                        } else {
+                            currentValue /= parseFloat(numbersBox.value);
+                        }
+                        numbersBox.value = 0;
+                        lastOperator = "/";
+                        break;
+                    case "=":
+                        switch (lastOperator) {
+                            case "+":
+                                currentValue += parseFloat(numberBox.value);
+                                numbersBox.value = currentValue;
+                                currentValue = 0;
+                                lastOperator = "=";
+                                break;
+                            case "-":
+                                currentValue -= parseFloat(numberBox.value);
+                                numbersBox.value = currentValue;
+                                currentValue = 0;
+                                lastOperator = "=";
+                                break;
+                            case "*":
+                                currentValue *= parseFloat(numberBox.value);
+                                numbersBox.value = currentValue;
+                                currentValue = 0;
+                                lastOperator = "=";
+                                break;
+                            case "/":
+                                currentValue /= parseFloat(numberBox.value);
+                                numbersBox.value = currentValue;
+                                currentValue = 0;
+                                lastOperator = "=";
+                                break;
+                        }
+                        break;
+                }
+            }
+            ;
+
+            // Los botones de numeros
+            button1.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+                }
+                numberBox.value += 1;
+            };
+            button2.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 2;
+            };
+            button3.onclick = function () {
+                if (lastOperator === "=") {
+                    lastOperator = "none";
+
+                    numberBox.value = 0;
+                }
+                numberBox.value += 3;
+            };
+            button4.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 4;
+            };
+            button5.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 5;
+            };
+            button6.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 6;
+            };
+            button7.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 7;
+            };
+            button8.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 8;
+            };
+            button9.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 9;
+            };
+
+            button0.onclick = function () {
+                if (lastOperator === "=") {
+                    numberBox.value = 0;
+                    lastOperator = "none";
+
+                }
+                numberBox.value += 0;
+            };
+            // reestablecer calculadora
+            buttonC.onclick = function () {
+                numberBox.value = 0;
+                lastOperator = "none";
+                currentValue = 0;
+            };
+
+            // las operaciones
+            buttonAdd.onclick = function () {
+                operate("+");
+            };
+
+            buttonSubs.onclick = function () {
+                operate("-");
+            };
+
+            buttonDiv.onclick = function () {
+                operate("/");
+            };
+
+            buttonEquals.onclick = function () {
+                operate("=");
+            };
+
+            buttonMult.onclick = function () {
+                operate("*");
+            };
+        </script>
+    </body>
+</html>
