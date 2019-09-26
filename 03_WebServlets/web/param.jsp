@@ -1,17 +1,9 @@
-<%-- 
-    Document   : param
-    Created on : 25-sep-2019, 17:36:56
-    Author     : alumno
---%>
+<%@include file="head.jsp" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="./estilos/estilos.jsp" />
-    </head>
+<%= head("Param") %>
     <body>
         <%@include file="header.jsp" %>
         <h1>DATOS</h1>
