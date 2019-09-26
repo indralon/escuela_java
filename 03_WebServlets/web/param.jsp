@@ -9,18 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page <% out.println(request.getParameter("respirar")); %></title>
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="./estilos/estilos.jsp" />
     </head>
     <body>
+        <%@include file="header.jsp" %>
         <h1>DATOS</h1>
         <p>Te llamas <% out.println(request.getParameter("nombre")); %> </p>
-        <p>Y tienes <% out.println(request.getParameter("edad")); %> </p>
-        <% if (request.getParameter("respirar").equals("on")) { %>
+        <p>Y tienes <% out.println(request.getParameter("edad")); %> años </p>
         <p>Y te gusta respirar</p>
-        <% } %>
+        
         <ul>
             <% for(int i = 0; i< 10; i++) { %>
-            <li>Numelo <% out.println(i); %></li>
+            <li class="tipo-letra-tam<%=i%>">Numelo <% out.println(i); %></li>
+            <p id="margen<%= i %>">Margen<%= i %> </p>
             <% } %>
         </ul>
     </body>
