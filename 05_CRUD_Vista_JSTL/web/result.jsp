@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Result</h1>
-        <a href="index.html">Inicio</a>
+        <a href="index.jsp">Inicio</a>
         <c:catch var="exception">
             <jsp:useBean id="user" type="sinensia.modelo.User" 
                          scope="request">
@@ -28,6 +28,9 @@
             </c:if>
             <c:if test="${param.method == 'Update'}">
                 <p>User update correctly</p>
+            </c:if>
+            <c:if test="${param.method == 'Login'}">
+                <p>User logged correctly</p>
             </c:if> 
             <c:if test="${param.method == null}">
                 <p>Error on register</p>

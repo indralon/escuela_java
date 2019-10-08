@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Register (Create)</h1>
-        <a href="index.html">Inicio</a>
+        <a href="index.jsp">Inicio</a>
         <form name="form1" action="users.do" method="post">
             <label for="email">Email: </label>
             <input id="email" name="email" type="email" placeholder="Write your email"
@@ -33,5 +33,7 @@
 
             <input type="submit" value="Register please!!! En un plis"/>
         </form>
+        <script src='js/md5.min.js'></script>
+        <script src='js/encryptRegister.js'></script>
     </body>
 </html>

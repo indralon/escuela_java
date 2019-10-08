@@ -1,0 +1,7 @@
+<h2>Añade tu héroe, campeon</h2>
+<form [formGroup]="addHeroForm" (ngSubmit)="onSubmit(addHeroForm.value)">
+    <label for="id">ID:</label><input id="id" type="text" formControlName="id" />
+    <label for="name">name:</label><input id="name" type="text" formControlName="name" />
+
+    <button class="button" type="submit">Add Hero</button>
+</form>
